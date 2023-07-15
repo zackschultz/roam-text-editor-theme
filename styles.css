@@ -1,0 +1,145 @@
+/* https://fonts.google.com/specimen/Inconsolata */
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700;800&display=swap');
+
+:root {
+  --color-foreground-primary: #202B33;
+  --color-background-primary: #FFFFFF;
+  --color-background-highlight-subtle: #f0f0f6;
+  --main-text-family: 'Inconsolata', monospace;
+  --main-text-size: 14px;
+  --main-text-weight: normal;
+  --main-text-color: var(--color-foreground-primary);
+  --title-text-size: 28px;
+  --title-text-weight: 700;
+  --subheading-text-size: 14px;
+  --subheading-text-weight: 700;
+  --layout-indent-size: 1.5em;
+  --layout-line-height: 1.3em;
+}
+
+@media (max-width:480px)  {
+  :root {
+    --main-text-size: 16px;
+    --title-text-size: 24px;
+    --subheading-text-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+
+}
+
+html {
+  font-size: var(--main-text-size);
+  font-weight: var(--main-text-weight);
+}
+
+body,
+div,
+span,
+textarea {
+  font-family: var(--main-text-family);
+  font-size: 1em;
+  line-height: var(--layout-line-height);
+}
+
+.rm-block-main code {
+  font-family: var(--main-text-family);
+  font-size: 1em;
+  padding: 0.05em 0.35em;
+}
+
+/* GENERAL */
+.roam-block {
+  min-height: calc(var(--layout-line-height) + 8px);
+  line-height: var(--layout-line-height);
+}
+
+.rm-block__controls {
+  padding-top: 0.3em;
+}
+.rm-block-input {
+  line-height: var(--layout-line-height);
+}
+
+/* TABLES */
+.roam-table th,
+.roam-table td,
+.roam-table tr {
+  min-width: 60px;
+  padding: 4px;
+}
+
+/*********************************************************
+* PAGE HEADINGS/TITLES
+*/
+
+/* Main page titles */
+h1.rm-title-display {
+  font-size: var(--title-text-size);
+  font-weight: var(--title-text-weight);
+}
+h1.rm-title-display::before {
+  content: '# ';
+}
+
+h1.rm-title-editing-display::before {
+  content: '';
+}
+h1.rm-title-editing-display textarea.rm-title-textarea {
+  font-size: var(--title-text-size);
+  font-weight: var(--title-text-weight);
+}
+
+/* Sidebar page titles */
+.rm-sidebar-outline h1.rm-title-display {
+  font-size: var(--subheading-text-size);
+  font-weight: var(--subheading-text-weight);
+}
+
+.rm-sidebar-outline  h1.rm-title-editing-display textarea.rm-title-textarea {
+  font-size: var(--subheading-text-size);
+  font-weight: var(--subheading-text-weight);
+}
+
+.rm-ref-page-view-title {
+  font-size: var(--subheading-text-size);
+  font-weight: var(--subheading-text-weight);
+}
+.rm-ref-page-view-title .rm-page__title::before {
+  content: '# ';
+}
+
+/* PAGE H2 */
+.rm-level2, .rm-heading-level-2>.rm-block__self .rm-block__input {
+  font-size: var(--subheading-text-size);
+  font-weight: var(--subheading-text-weight);
+  font-family: var(--main-text-family) !important;  /* Thanks roam... */
+}
+.rm-heading-level-2>.rm-block__self .rm-block__input::before {
+  content: '## ';
+}
+
+/* PAGE H3 */
+.rm-level3, .rm-heading-level-3>.rm-block__self .rm-block__input {
+  font-size: var(--subheading-text-size);
+  font-weight: var(--subheading-text-weight);
+  font-family: var(--main-text-family) !important;  /* Thanks roam... */
+}
+.rm-heading-level-3>.rm-block__self .rm-block__input::before {
+  content: '### ';
+}
+
+.rm-multibar {
+  border-right-style: dotted;
+}
+
+div.rm-code-block {
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.rm-focused .rm-block-main:has(.rm-block-input) {
+  background-color: var(--color-background-highlight-subtle);
+}
+

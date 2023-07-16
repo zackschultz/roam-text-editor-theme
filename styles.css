@@ -1,11 +1,13 @@
 /* https://fonts.google.com/specimen/Inconsolata */
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700;800&display=swap');
+/* https://fonts.google.com/specimen/Lato */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
 :root {
   --color-foreground-primary: #202B33;
   --color-background-primary: #FFFFFF;
-  --color-background-highlight-subtle: #f0f0f6;
-  --main-text-family: 'Inconsolata', monospace;
+  --color-background-highlight-subtle: #f1f1f1;
+  --main-text-family: 'Inconsolata',monospace;
   --main-text-size: 14px;
   --main-text-weight: normal;
   --main-text-color: var(--color-foreground-primary);
@@ -13,6 +15,8 @@
   --title-text-weight: 700;
   --subheading-text-size: 14px;
   --subheading-text-weight: 700;
+  --ui-text-family: 'Lato','Inter',sans-serif;
+  --ui-text-size: 14px;
   --layout-indent-size: 1.5em;
   --layout-line-height: 1.3em;
 }
@@ -43,10 +47,27 @@ textarea {
   line-height: var(--layout-line-height);
 }
 
+.roam-sidebar-container div,
+.roam-sidebar-container span,
+.bp3-menu div,
+.bp3-menu span {
+  font-family: var(--ui-text-family);
+  font-size: var(--ui-text-size);
+}
+
 .rm-block-main code {
   font-family: var(--main-text-family);
   font-size: 1em;
   padding: 0.05em 0.35em;
+}
+
+.rm-bq {
+  padding: 0 0.3em;
+  background-color: #F5F8FA;
+  border-left: 3px solid #92c7f3;
+  font-size: 14px;
+  margin: 0;
+  word-wrap: break-word;
 }
 
 /* GENERAL */
@@ -68,6 +89,11 @@ textarea {
 .roam-table tr {
   min-width: 60px;
   padding: 4px;
+}
+
+/* MENUS */
+.bp3-text-small {
+  font-size: var(--main-text-size);
 }
 
 /*********************************************************
@@ -142,4 +168,3 @@ div.rm-code-block {
 .rm-focused .rm-block-main:has(.rm-block-input) {
   background-color: var(--color-background-highlight-subtle);
 }
-
